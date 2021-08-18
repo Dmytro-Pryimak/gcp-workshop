@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "beam-flight-delays"
+version = "1.0.0"
+description = ""
+authors = []
+
+[tool.poetry.dependencies]
+python = "~3.7"
+
+[tool.poetry.dev-dependencies]
+google-cloud-bigquery = "2.20.0"
+# new
+apache-beam = "*"
+google-cloud-pubsub = "*"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
