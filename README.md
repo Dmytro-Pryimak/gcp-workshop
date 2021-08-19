@@ -57,36 +57,52 @@ This lab uses the sample code for Chapter 4 from the Data Science on Google Clou
 
 In Cloud Shell enter the following commands to clone the repository:  
 
-``git clone https://github.com/GoogleCloudPlatform/data-science-on-gcp/``  
+```
+git clone https://github.com/GoogleCloudPlatform/data-science-on-gcp/
+```  
 
 Change to the repository source directory for this lab:
 
-``cd ~/data-science-on-gcp/04_streaming/simulate``  
+```
+cd ~/data-science-on-gcp/04_streaming/simulate
+```  
 Execute the following command to download and update the packages list.  
 
-``sudo apt-get update``  
+```
+sudo apt-get update
+```  
 
 Python virtual environments are used to isolate package installation from the system.  
 
-``sudo apt-get install virtualenv``  
+``` 
+sudo apt-get install virtualenv
+```  
 If prompted [Y/n], press Y and then Enter.  
 
-``virtualenv -p python3 venv``  
+```
+virtualenv -p python3 venv
+```  
 
 Activate the virtual environment.  
 
-``source venv/bin/activate``  
+```
+source venv/bin/activate
+```  
 
 Install the Google Cloud Python components required by the Python script that will simulate real time flight events:  
 
-``pip install --upgrade google-cloud-pubsub``  
-``pip install google-cloud-bigquery``  
-``pip install --upgrade timezonefinder pytz 'apache-beam[gcp]'``  
+```
+pip install --upgrade google-cloud-pubsub  
+pip install google-cloud-bigquery
+pip install --upgrade timezonefinder pytz 'apache-beam[gcp]'
+```  
 
 ### Create the Real-Time Google Dataflow Stream Processing Job
 Create a default OAuth application credential that allows the Python real-time event simulation script to access the simulated event data in BigQuery:  
 
-``gcloud auth application-default login``  
+```
+gcloud auth application-default login
+```  
 
 When prompted to continue enter Y.
 
@@ -98,41 +114,57 @@ Copy the authentication code that is displayed and paste it into the Enter verif
 
 Assign your project ID to an environment variable.  
 
-``export PROJECT_ID=$(gcloud info --format='value(config.project)')``  
+```
+export PROJECT_ID=$(gcloud info --format='value(config.project)')
+```  
 
 Now, run this simulation script to create the Google Pub/Sub topics:  
 
-``python ./simulate.py --project $PROJECT_ID --startTime '2015-01-01 06:00:00 UTC' --endTime '2015-01-04 00:00:00 UTC' --speedFactor=100``  
+```
+python ./simulate.py --project $PROJECT_ID --startTime '2015-01-01 06:00:00 UTC' --endTime '2015-01-04 00:00:00 UTC' --speedFactor=100
+```  
 
 ### Deploy the Google Dataflow job to process stream data  
 Open a new cloud console window.  
 Download the repository with Dataflow job:  
-``git clone https://github.com/Dmytro-Pryimak/gcp-workshop.git``  
-``cd gcp-workshop``  
+```
+git clone https://github.com/Dmytro-Pryimak/gcp-workshop.git  
+cd gcp-workshop
+```
 
 Do the same steps as in the previous part: 
 
 Python virtual environments are used to isolate package installation from the system.  
 
-``sudo apt-get install virtualenv``  
+```
+sudo apt-get install virtualenv
+```  
 If prompted [Y/n], press Y and then Enter.  
 
-``virtualenv -p python3 venv``  
+```
+virtualenv -p python3 venv
+```  
 
 Activate the virtual environment.  
 
-``source venv/bin/activate``  
+```
+source venv/bin/activate
+```  
 
 Install the Google Cloud Python components required by the Python script that will simulate real time flight events:  
 
-``pip install --upgrade google-cloud-pubsub``  
-``pip install google-cloud-bigquery``  
-``pip install --upgrade timezonefinder pytz 'apache-beam[gcp]'``  
+```
+pip install --upgrade google-cloud-pubsub  
+pip install google-cloud-bigquery
+pip install --upgrade timezonefinder pytz 'apache-beam[gcp]'
+```  
 
 ### Create the Real-Time Google Dataflow Stream Processing Job
 Create a default OAuth application credential that allows the Python real-time event simulation script to access the simulated event data in BigQuery:  
 
-``gcloud auth application-default login``  
+```
+gcloud auth application-default login
+```  
 
 When prompted to continue enter Y.
 
@@ -144,7 +176,9 @@ Copy the authentication code that is displayed and paste it into the Enter verif
 
 Assign your project ID to an environment variable.  
 
-``export PROJECT_ID=$(gcloud info --format='value(config.project)')``  
+```
+export PROJECT_ID=$(gcloud info --format='value(config.project)')
+```  
 
 Create Bucket to hold the dataflow data:  
 
