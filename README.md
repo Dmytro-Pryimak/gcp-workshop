@@ -35,7 +35,8 @@ Do the same for enabling DataFlow API.
 For this exercise we will be using the existing data set with the US flights information. I prepared the dataset as CSV files in the GCS. We need to import it to BigQuery.   
 Go to **HOME>BigQuery**. It is under BIG DATA section.  
    
-First we need to create dataset ``flights``. 
+First we need to create dataset ``flights``  
+
 ![img.png](images/img3.png)   
 It is similar to database space in RDBMS.
   
@@ -52,7 +53,7 @@ Cloud Shell is a virtual machine that is loaded with development tools. It offer
 In the Cloud Console, in the top right toolbar, click the Activate Cloud Shell button   
 ![img.png](images/img6.png)
 
-###Clone the Data Science on Google Cloud Platform Repository
+### Clone the Data Science on Google Cloud Platform Repository
 This lab uses the sample code for Chapter 4 from the Data Science on Google Cloud Platform book from O'Reilly.  
 
 In Cloud Shell enter the following commands to clone the repository:  
