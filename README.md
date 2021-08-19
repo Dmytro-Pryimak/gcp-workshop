@@ -122,7 +122,7 @@ export PROJECT_ID=$(gcloud info --format='value(config.project)')
 Now, run this simulation script to create the Google Pub/Sub topics:  
 
 ```
-python ./simulate.py --project $PROJECT_ID --startTime '2015-01-01 06:00:00 UTC' --endTime '2015-01-15 00:00:00 UTC' --speedFactor=100
+python ./simulate.py --project $PROJECT_ID --startTime '2015-01-01 06:00:00 UTC' --endTime '2015-01-15 00:00:00 UTC' --speedFactor=60
 ```  
 
 ### Deploy the Google Dataflow job to process stream data  
