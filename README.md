@@ -122,7 +122,7 @@ export PROJECT_ID=$(gcloud info --format='value(config.project)')
 Now, run this simulation script to create the Google Pub/Sub topics:  
 
 ```
-python ./simulate.py --project $PROJECT_ID --startTime '2015-01-01 06:00:00 UTC' --endTime '2015-01-04 00:00:00 UTC' --speedFactor=100
+python ./simulate.py --project $PROJECT_ID --startTime '2015-01-01 06:00:00 UTC' --endTime '2015-01-15 00:00:00 UTC' --speedFactor=100
 ```  
 
 ### Deploy the Google Dataflow job to process stream data  
@@ -192,7 +192,7 @@ gsutil mb gs://$BUCKET
 
 Run the script to submit Dataflow application:  
 ```
-python -m average_delay_pipeline --runner=dataflow --project=$PROJECT_ID --region=us-central1 --streaming --temp_location=gs://$PROJECT_ID-stream/temp/ --staging_location=gs://$PROJECT_ID-stream/staging --averagingInterval=15 --pipeline_project=$PROJECT_ID --speedupFactor=100
+python -m average_delay_pipeline --runner=dataflow --project=$PROJECT_ID --region=us-central1 --streaming --temp_location=gs://$PROJECT_ID-stream/temp/ --staging_location=gs://$PROJECT_ID-stream/staging --averagingInterval=15 --pipeline_project=$PROJECT_ID --speedupFactor=150
 ```  
 
 Wait for the job to start and check it in the Dataflow UI:  
